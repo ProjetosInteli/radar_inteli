@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<archimate:model xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:archimate="http://www.archimatetool.com/archimate" name="Projeto Radar Inteli" id="id-b818560f17f64b18961ea16e6b785c57" version="5.0.0">
+  <folder name="Strategy" id="id-f79f3b0e473f4ec1b3d80e70d8c821b3" type="strategy"/>
+  <folder name="Business" id="id-9b8deceb4029482998c37c323c9b38d2" type="business"/>
+  <folder name="Application" id="id-2df49486e0d04d25a8a172c7363de21e" type="application"/>
+  <folder name="Technology &amp; Physical" id="id-b475ce17bf034828a47417dd1836ba55" type="technology"/>
+  <folder name="Motivation" id="id-bee57407d57c45c5b8eb449a112d5464" type="motivation">
+    <element xsi:type="archimate:Requirement" name="Requirement" id="id-4e45498637b24932a84777c6c3de9232"/>
+    <element xsi:type="archimate:Requirement" name="Requirement (copy)" id="id-9cd7266fdbde46e4951d573e8188fa7b"/>
+    <element xsi:type="archimate:Requirement" name="Requirement (copy)" id="id-0f1a2de7cec64bbaba86b7e9657d0b25"/>
+    <element xsi:type="archimate:Requirement" name="Requirement (copy)" id="id-344afb7eef2a4cc696c2fd07fb5cb720"/>
+    <element xsi:type="archimate:Requirement" name="Requirement (copy)" id="id-c33ac20bd2b8441ebb709cb6cd1edd4c"/>
+    <element xsi:type="archimate:Requirement" name="Requirement (copy)" id="id-64f69baf7e3142ab886a5e4ffbfb35ad"/>
+    <element xsi:type="archimate:Requirement" name="Requirement (copy)" id="id-ce3845f3e1964b89a77216a094ab43cf"/>
+    <element xsi:type="archimate:Requirement" name="Requirement (copy)" id="id-1067eb66f2fe4523b3ce7f24cd00fae1"/>
+    <element xsi:type="archimate:Requirement" name="Requirement (copy)" id="id-299926f5c88e4342896989659038f190"/>
+    <element xsi:type="archimate:Requirement" name="Requirement (copy)" id="id-e275853b82bf4f3cbe17034b8361c72a"/>
+    <element xsi:type="archimate:Requirement" name="Requirement (copy)" id="id-18b45076b9284e2aafb568315f61d3e4"/>
+  </folder>
+  <folder name="Implementation &amp; Migration" id="id-ce45aed2f8af425f8af551d95de37505" type="implementation_migration"/>
+  <folder name="Other" id="id-1ebaaa36f6ed4e41b102d62b8d8eb8d7" type="other"/>
+  <folder name="Relations" id="id-f4e20889ae5b44e3be16374817f2a61b" type="relations"/>
+  <folder name="Views" id="id-3114acad425f4732975004b58f79fe20" type="diagrams">
+    <folder name="Análise da Demanda" id="id-b42a9ed1da7e4044b5d8839ee017888a">
+      <element xsi:type="archimate:ArchimateDiagramModel" name="Lean Inception - Brainstorming" id="id-db3e84265b0f479eb8cec5e4637c89f5">
+        <child xsi:type="archimate:DiagramObject" id="id-5804896b0f714a79bcc9429ffd1fdd18" textPosition="1" archimateElement="id-4e45498637b24932a84777c6c3de9232">
+          <bounds x="36" y="36" width="156" height="79"/>
+        </child>
+        <child xsi:type="archimate:DiagramObject" id="id-4168776569644d669e49987d81a5175f" textPosition="1" archimateElement="id-9cd7266fdbde46e4951d573e8188fa7b">
+          <bounds x="36" y="122" width="156" height="79"/>
+        </child>
+        <child xsi:type="archimate:DiagramObject" id="id-21769700dd6545de844855890236c317" textPosition="1" archimateElement="id-0f1a2de7cec64bbaba86b7e9657d0b25">
+          <bounds x="372" y="210" width="156" height="79"/>
+        </child>
+        <child xsi:type="archimate:DiagramObject" id="id-81c3e7b707aa4407b8ea67441a7aa08d" textPosition="1" archimateElement="id-344afb7eef2a4cc696c2fd07fb5cb720">
+          <bounds x="372" y="122" width="156" height="79"/>
+        </child>
+        <child xsi:type="archimate:DiagramObject" id="id-b14445efe5ea48b2bf64c7568e25f2c8" textPosition="1" archimateElement="id-c33ac20bd2b8441ebb709cb6cd1edd4c">
+          <bounds x="372" y="36" width="156" height="79"/>
+        </child>
+        <child xsi:type="archimate:DiagramObject" id="id-b5955e030e364c088b061a9fcff1c734" textPosition="1" archimateElement="id-64f69baf7e3142ab886a5e4ffbfb35ad">
+          <bounds x="204" y="298" width="156" height="79"/>
+        </child>
+        <child xsi:type="archimate:DiagramObject" id="id-5242375fcd4341cc9827e53afefaf941" textPosition="1" archimateElement="id-ce3845f3e1964b89a77216a094ab43cf">
+          <bounds x="204" y="210" width="156" height="79"/>
+        </child>
+        <child xsi:type="archimate:DiagramObject" id="id-b2f4543a07764364bce09a1caccc4d7f" textPosition="1" archimateElement="id-1067eb66f2fe4523b3ce7f24cd00fae1">
+          <bounds x="204" y="122" width="156" height="79"/>
+        </child>
+        <child xsi:type="archimate:DiagramObject" id="id-400bd99d0bf04e88ac76d8c82783d99b" textPosition="1" archimateElement="id-299926f5c88e4342896989659038f190">
+          <bounds x="204" y="36" width="156" height="79"/>
+        </child>
+        <child xsi:type="archimate:DiagramObject" id="id-b5c03ca0026b4fe78015218d8c213f17" textPosition="1" archimateElement="id-e275853b82bf4f3cbe17034b8361c72a">
+          <bounds x="36" y="298" width="156" height="79"/>
+        </child>
+        <child xsi:type="archimate:DiagramObject" id="id-5b1d83f48f744a4191456cdde9d94bc3" textPosition="1" archimateElement="id-18b45076b9284e2aafb568315f61d3e4">
+          <bounds x="36" y="210" width="156" height="79"/>
+        </child>
+      </element>
+    </folder>
+    <element xsi:type="archimate:ArchimateDiagramModel" name="Default View" id="id-cbc4dab9e786441ea9deb0bfd8f8c01a"/>
+  </folder>
+</archimate:model>
