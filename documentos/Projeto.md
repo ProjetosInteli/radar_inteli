@@ -25,20 +25,14 @@
 
 - [1. Introdução](#1-introdução)
   - [1.1 Termos e Abreviações](#11-termos-e-abreviações)
-  - [1.2 Objetivo do Documento](#12-objetivo-do-documento)
 - [2. Entendimento do Projeto e do Negócio](#2-entendimento-do-projeto-e-do-negócio)
-  - [2.1 Contexto da Indústria do Parceiro](#21-contexto-da-indústria-do-parceiro)
-  - [2.2 Problema](#22-problema)
-  - [2.3 Visão do Projeto e do Produto](#23-visão-do-projeto-e-do-produto)
-  - [2.4 Personas e Jornada do Usuário](#24-personas-e-jornada-do-usuário)
-  - [2.5 Modelagem do Fluxo de Negócio](#25-modelagem-do-fluxo-de-negócio)
-    - [2.5.1 Fluxo de Negócio Atual (AS-IS)](#251-fluxo-de-negócio-atual-as-is)
-    - [2.5.2 Fluxo de Negócio Proposto (TO-BE)](#252-fluxo-de-negócio-proposto-to-be)
-  - [2.6 Matriz de Risco do Projeto](#26-matriz-de-risco-do-projeto)
-  - [2.7 Ideação](#27-ideação)
-    - [2.7.1 Brainstorming de features](#271-brainstorming-de-features)
-    - [2.7.2 Sequenciamento/Priorização de entregas](#272-sequenciamentopriorização-de-entregas)
-  - [2.8 Canvas do Projeto](#28-canvas-do-projeto)
+  - [2.1 Problema](#21-problema)
+  - [2.2 Visão do Projeto e do Produto](#22-visão-do-projeto-e-do-produto)
+  - [2.3 Personas e Jornada do Usuário](#23-personas-e-jornada-do-usuário)
+  - [2.4 Modelagem do Fluxo de Negócio](#24-modelagem-do-fluxo-de-negócio)
+  - [2.5 Matriz de Risco do Projeto](#25-matriz-de-risco-do-projeto)
+  - [2.6 Ideação - Brainstorming de features](#26-ideação---brainstorming-de-features)
+  - [2.7 Métricas de Avaliação](#27-metricas-de-avaliação)
 - [3. Requisitos do Projeto](#3-requisitos-do-projeto)
   - [3.1 Requisitos Funcionais (RFs)](#31-requisitos-funcionais-rfs)
   - [3.2 Requisitos Não Funcionais (RNFs)](#32-requisitos-não-funcionais-rnfs)
@@ -84,63 +78,111 @@
 
 
 # 1. Introdução
-_conteúdo_
+Este documento apresenta o projeto e desenvolvimento da Solução Radar Inteli.
 
 ## 1.1 Termos e Abreviações
-_conteúdo_
-
-## 1.2 Objetivo do Documento
-_conteúdo_
+DoR - 
+DoD - 
 
 # 2. Entendimento do Projeto e do Negócio
-_conteúdo_
-
-## 2.1 Contexto da Indústria do Parceiro
 _conteúdo_
 
 ## 2.2 Problema
 _conteúdo_
 
-## 2.3 Visão do Projeto e do Produto
-  _conteúdo_
+## 2.2 Visão do Projeto e do Produto
+Abaixo é apresentada a visão geral do produto.
 
-  **Nota**: _Insira aqui informações sobre o que se trata o projeto e que valor ele vai entregar, Objetivos do Produto e O que o produto faz e não faz._
+> **FOR**: Professores orientadores do Inteli
 
-## 2.4 Personas e Jornada do Usuário
+> **WHOSE**: que tem dificuldade em acompanhar, avaliar e analisar desempenho dos alunos
+
+> **THE**: Radar Inteli
+
+> **IS A**: Sistema de Informação
+
+> **THAT**: torna esse processo mais eficiente e eficaz
+
+> **DIFFERENT FROM**: Planilhas excel e diversos sistemas que não se comunicam entre si
+
+> **OUR PRODUCT**: oferece um local unificado de tratamento de dedos de desempenho de produtividade e qualitativos dos alunos, ao longo dos módulos.
+
+<br>
+<p>O que este sistema é e o que este sistema não é:</p>
+
+> **IS**: Sistema de tratamento de dados provenientes de outros sistemas criados no Inteli; Um sistema de cálculo de notas e análise de métricas; Sistema que a Profa. Vanessa está usando para realizar a execução dos módulos de ES.
+
+> **IS NOT**: Sistema Acadêmico, Sistema Institucional.
+
+<br>
+
+**Objetivos do Produto**
+
+- Servir como apoio para o teste de execução dos módulos, me ajudando a entender como rodar módulos e os conhecimentos necessários.
+
+- Ajudar no processo de coordenação da avaliação de desempenho dos alunos
+
+## 2.3 Personas e Jornada do Usuário
+As personas são Professores orientadores, Professores de Eixo (para acompanhamento) e Coordenador.
+
+A jornada do usuário será feito posteriormente, porque eu mesma que estou construindo a solução.
+
+## 2.4 Modelagem do Fluxo de Negócio
 _conteúdo_
 
-## 2.5 Modelagem do Fluxo de Negócio
+## 2.5 Matriz de Risco do Projeto
 _conteúdo_
 
-## 2.5.1 Fluxo de Negócio Atual (AS-IS)
-_conteúdo_
+## 2.6 Ideação - Brainstorming de features
+Vou construir a ideação na medida em que for precisando das coisas.
 
-## 2.5.2 Fluxo de Negócio Proposto (TO-BE)
-_conteúdo_
+- Listagem de alunos, com nome, e-mail e fotos.
+- CRUD de Turma, Módulo e Grupo (número)
+- Associação de aluno a módulo e Grupo (número e nome)
+- Definição de SM e PO para cada sprint
+- Definição dos artefatos de cada sprint para um módulo.
+- Registro de avaliação de cada artefato
+- Cálculo da média dos artefatos de cada grupo em cada Sprint
+- Registro de avaliação de pares (Fator Cesar)
+- Registro do índice de desempenho na Sprint (Fator Renato)
+- Registro de informações/anotações sobre o aluno em relação a Sprint
+- Registro de nota extra mérito/demérito
+- Registro de nota - fator moderador
+- Cálculo de nota individual do aluno na Sprint
+- Registro de mensagem opcional do orientador para o aluno
+- Criação do texto de feedback para copiar e colar na Adalove 
 
-## 2.6 Matriz de Risco do Projeto
-_conteúdo_
+## 2.7 Métricas de Avaliação
+As métricas de avaliação são as seguintes:
 
-## 2.7 Ideação
-_conteúdo_
-
-## 2.7.1 Brainstorming de features
-_conteúdo_
-
-## 2.7.2 Sequenciamento/Priorização de entregas
-_conteúdo_
-
-## 2.8 Canvas do Projeto
-_conteúdo_
+- Evolução no aprendizado da Vanessa
+- Corretude dos cálculos
+- Segurança na persistência dos dados
 
 # 3. Requisitos do Projeto
-_conteúdo_
+Os Requisitos funcionais e não funcionais são apresentados a seguir.
 
 ## 3.1 Requisitos Funcionais (RFs)
-_conteúdo_ 
+Os requisitos funcionais são apresentados abaixo.
+
+|ID|RF|Descrição|
+|---|---|---|
+|RF001|Cadastro e alteração de alunos|O sistema deve permitir o cadastro e alteração de informações (nome, email, curso, turma, módulo) sobre alunos do Inteli|
+|RF002|Cadastro e alteração de Turma, Módulo e Grupo (número)|O sistema deve permitir o cadastro e alteração de Turmas, módulo e Grupo (número)|
+|RF003|Associação de aluno a módulo e Grupo|O sistema deve permitir que o orientador associe alunos a módulos e grupos (número)|
+|RF004|||
+|RF005|||
 
 ## 3.2 Requisitos Não Funcionais (RNFs)
-_conteúdo_
+Os requisitos funcionais são apresentados abaixo.
+
+ID|RF|Descrição|
+|---|---|---|
+|RNF001|Orientação a Serviços e microserviços|O sistema deve ser projetado em um arquitetua orientada a serviços|
+|RNF002||Persistência de dados| O sistema deve garanir persistência e redundância de dados para que não haja perda de dados.
+|RNF003|||
+|RNF004|||
+
 
 ## 3.3 Correlação RFs e RNFs
 _conteúdo_
