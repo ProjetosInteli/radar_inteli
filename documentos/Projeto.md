@@ -1,6 +1,6 @@
 <Table>
   <tr>
-    <td><a href= "https://www.cps.sp.gov.br/"><img src="img/logo-CPS.jpg" alt="Centro Paula Souza" border="0"></td>
+    <td><a><img src="img/logo_radar.png" border="0" width="280" height="110"></td>
     <td>
       <a href= "https://www.inteli.edu.br/"><img src="img/logo-Inteli.png" alt="Inteli - Instituto de Tecnologia e Liderança" border="0"></a>
     </td>
@@ -81,31 +81,30 @@
 Este documento apresenta o projeto e desenvolvimento da Solução Radar Inteli.
 
 ## 1.1 Termos e Abreviações
-DoR - 
-DoD - 
+- 
 
 # 2. Entendimento do Projeto e do Negócio
-_conteúdo_
+Esta seção apresenta o problema e a proposta de solução.
 
-## 2.2 Problema
-_conteúdo_
+## 2.1 Problema
+A Professora Vanessa, atua como Professora Orientadora, registra e analisa informações quantitativas e qualitativas para acompanhamento dos alunos duarante o desenvolvimento dos módulos sob sua responsabilidade. Atualmente todas as informações são registradas manualmente em planilhas eletrônicas e as análises são criadas através de opções de geração de estatísticas oferecidas por essas ferramentas. A coleta de várias dessas informações advém de outros sistemas que demandam cópias manuais de uma grande quantidade de informações de forma manual, demandando alto esforço, risco de erros e diminuição do potencial de uso dessas informações para suporte ao desenvolvimentodos alunos dentro do módulo e no curso.  
 
 ## 2.2 Visão do Projeto e do Produto
 Abaixo é apresentada a visão geral do produto.
 
 > **FOR**: Professores orientadores do Inteli
 
-> **WHOSE**: que tem dificuldade em acompanhar, avaliar e analisar desempenho dos alunos
+> **WHOSE**: que tem dificuldades em acompanhar, avaliar e analisar desempenho dos alunos
 
 > **THE**: Radar Inteli
 
 > **IS A**: Sistema de Informação
 
-> **THAT**: torna esse processo mais eficiente e eficaz
+> **THAT**: torna o processo de coleta e análise de dados individuais e de grupo mais eficiente e eficaz
 
 > **DIFFERENT FROM**: Planilhas excel e diversos sistemas que não se comunicam entre si
 
-> **OUR PRODUCT**: oferece um local unificado de tratamento de dedos de desempenho de produtividade e qualitativos dos alunos, ao longo dos módulos.
+> **OUR PRODUCT**: oferece um sistema unificado para tratamento de dados de desempenho de produtividade e qualitativos dos alunos e respectivos grupos, nos módulos e entre os mesmo.
 
 <br>
 <p>O que este sistema é e o que este sistema não é:</p>
@@ -118,7 +117,7 @@ Abaixo é apresentada a visão geral do produto.
 
 **Objetivos do Produto**
 
-- Servir como apoio para o teste de execução dos módulos, me ajudando a entender como rodar módulos e os conhecimentos necessários.
+- Servir como apoio para o desenvolvimento em práticas de engenharia de software e de desenvolvimento de sistemas.
 
 - Ajudar no processo de coordenação da avaliação de desempenho dos alunos
 
@@ -128,10 +127,27 @@ As personas são Professores orientadores, Professores de Eixo (para acompanhame
 A jornada do usuário será feito posteriormente, porque eu mesma que estou construindo a solução.
 
 ## 2.4 Modelagem do Fluxo de Negócio
-_conteúdo_
+Nesta seção são listadas as atividades que a Professoa Vanessa realiza.
+
+- Coleta de índices de agilidade individuais e de grupo a cada Sprint
+- Cálculo de fator de produtividade
+- Coleta de pontos de avaliação de pares e feedbacks dos colegas de grupo para cada aluno
+- Registro de notas por atividades extras com feedbacks
+- Cálculo de nota do aluno na Sprint com feedbacks
+- Cálculo da nota dos artefatos com registro de feedback
+- Cálculo da média das notas dos artefatos
+- Acompanhamento de impressões do time docente sobre cada aluno ao longo do módulo.
 
 ## 2.5 Matriz de Risco do Projeto
-_conteúdo_
+Segue a lista de riscos possíveis para este projeto
+- Falta de tempo para dedicar ao projeto
+  - Ação: Definição de prazos reais e factíveis. 
+- Dificuldade de desenvolvimento de uma solução simples e eficiente.
+  - Ação: Solicitar consultoria do Prof. Afonso para direcionamento e aprovação das propostas
+
+Segue a lista de oportunidades
+- Participar ativamente de todas as etapas de construção de um sistema.
+- Experimentar os conhecimentos e práticas abordados nos módulos. 
 
 ## 2.6 Ideação - Brainstorming de features
 Vou construir a ideação na medida em que for precisando das coisas.
@@ -155,9 +171,9 @@ Vou construir a ideação na medida em que for precisando das coisas.
 ## 2.7 Métricas de Avaliação
 As métricas de avaliação são as seguintes:
 
-- Evolução no aprendizado da Vanessa
 - Corretude dos cálculos
 - Segurança na persistência dos dados
+- Usabilidade no dia a dia do módulo
 
 # 3. Requisitos do Projeto
 Os Requisitos funcionais e não funcionais são apresentados a seguir.
@@ -170,8 +186,20 @@ Os requisitos funcionais são apresentados abaixo.
 |RF001|Cadastro e alteração de alunos|O sistema deve permitir o cadastro e alteração de informações (nome, email, curso, turma, módulo) sobre alunos do Inteli|
 |RF002|Cadastro e alteração de Turma, Módulo e Grupo (número)|O sistema deve permitir o cadastro e alteração de Turmas, módulo e Grupo (número)|
 |RF003|Associação de aluno a módulo e Grupo|O sistema deve permitir que o orientador associe alunos a módulos e grupos (número)|
-|RF004|||
-|RF005|||
+|RF004|Cadastro de artefato de uma Sprint de um módulo|O sistema deve permitir o cadstro de artefatos de sprints de módulos|
+|RF005|Coleta de dados de gestão diária de tarefas|O sistema deve permitir a coleta de dados de produtividade das sprints de cada módulo no sistema Trello|
+|RF006|Cálculo do índice de produtividade|Ó sistema deve realizar o cálculo do índice de produtividade permitindo ajuste dinâmico dos pesos de cada fator e do fator de ajuste|
+|RF007|||
+|RF008|||
+|RF009|||
+
+Regras de Negócio
+
+|##|Regra de Negócio|
+|RN01|Índice de Produtividade na Sprint = Peso1 X FatorA + Peso2 X FatorB + Peso3 X FatorC, onde Peso1 + Peso2 + Peso3 = 1,0; FatorA = Índice de proximidade do tempo previsto de execução das tarefas a quantidade mínima de horas de desenvolvimento na Sprint; PesoB = Índice de Proximidade do Tempo total previsto de desenvolvimento para o tempo total de desenvolvimento do Projeto; PesoC = Índice de proximidade do Tempo total de desenvolvimento na Sprint em relação a quantidade mínima de horas de desenvolvimento na Sprint|
+|RN02|O sistema deve permitir a criação de mais fatores para o índice de produtividade|
+|RN03|O sistema deve permitir que a fórmula de cálculo da nota individual do aluno na sprint seja reformulada|
+|RN04||
 
 ## 3.2 Requisitos Não Funcionais (RNFs)
 Os requisitos funcionais são apresentados abaixo.
@@ -183,9 +211,8 @@ ID|RF|Descrição|
 |RNF003|||
 |RNF004|||
 
-
 ## 3.3 Correlação RFs e RNFs
-_conteúdo_
+Tudo para tudo
 
 # 4. Modelagem de Dados
 _conteúdo_
