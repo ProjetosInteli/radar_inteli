@@ -1,6 +1,6 @@
 <Table>
   <tr>
-    <td><a href= "https://www.cps.sp.gov.br/"><img src="img/logo-CPS.jpg" alt="Centro Paula Souza" border="0"></td>
+    <td><a><img src="img/logo_radar.png" border="0" width="280" height="110"></td>
     <td>
       <a href= "https://www.inteli.edu.br/"><img src="img/logo-Inteli.png" alt="Inteli - Instituto de Tecnologia e Liderança" border="0"></a>
     </td>
@@ -42,9 +42,9 @@
   - [4.2 Modelo Lógico de Dados](#42-modelo-lógico-de-dados)
   - [4.3 Modelo Físico de Dados](#43-modelo-físico-de-dados)
 - [5. Solução Técnica (Design)](#5-solução-técnica-design)
-  - [5.1 Diagrama de Componentes da UML](#51-diagrama-de-componentes-da-uml)
-  - [5.2 Diagramas de Sequência da UML](#52-diagramas-de-sequência-da-uml)
-  - [5.3 Descrição Textual dos Diagramas](#53-descrição-textual-dos-diagramas)
+  - [5.1 Diagrama de Classes da UML](#51-diagrama-de-classes-da-uml)
+  - [5.2 Diagrama de Componentes da UML](#52-diagrama-de-componentes-da-uml)
+  - [5.3 Diagramas de Sequência da UML](#53-diagramas-de-sequência-da-uml)
 - [6. Mapeamento Técnico de Infraestrutura e Implantação](#6-mapeamento-técnico-de-infraestrutura-e-implantação)
   - [6.1 Diagrama de Implantação da UML](#61-diagrama-de-implantação-da-uml)
   - [6.2 Justificativa das Escolhas de Implantação](#62-justificativa-das-escolhas-de-implantação)
@@ -81,31 +81,30 @@
 Este documento apresenta o projeto e desenvolvimento da Solução Radar Inteli.
 
 ## 1.1 Termos e Abreviações
-DoR - 
-DoD - 
+- 
 
 # 2. Entendimento do Projeto e do Negócio
-_conteúdo_
+Esta seção apresenta o problema e a proposta de solução.
 
-## 2.2 Problema
-_conteúdo_
+## 2.1 Problema
+A Professora Vanessa, atua como Professora Orientadora, registra e analisa informações quantitativas e qualitativas para acompanhamento dos alunos duarante o desenvolvimento dos módulos sob sua responsabilidade. Atualmente todas as informações são registradas manualmente em planilhas eletrônicas e as análises são criadas através de opções de geração de estatísticas oferecidas por essas ferramentas. A coleta de várias dessas informações advém de outros sistemas que demandam cópias manuais de uma grande quantidade de informações de forma manual, demandando alto esforço, risco de erros e diminuição do potencial de uso dessas informações para suporte ao desenvolvimentodos alunos dentro do módulo e no curso.  
 
 ## 2.2 Visão do Projeto e do Produto
 Abaixo é apresentada a visão geral do produto.
 
 > **FOR**: Professores orientadores do Inteli
 
-> **WHOSE**: que tem dificuldade em acompanhar, avaliar e analisar desempenho dos alunos
+> **WHOSE**: que tem dificuldades em acompanhar, avaliar e analisar desempenho dos alunos
 
 > **THE**: Radar Inteli
 
 > **IS A**: Sistema de Informação
 
-> **THAT**: torna esse processo mais eficiente e eficaz
+> **THAT**: torna o processo de coleta e análise de dados individuais e de grupo mais eficiente e eficaz
 
 > **DIFFERENT FROM**: Planilhas excel e diversos sistemas que não se comunicam entre si
 
-> **OUR PRODUCT**: oferece um local unificado de tratamento de dedos de desempenho de produtividade e qualitativos dos alunos, ao longo dos módulos.
+> **OUR PRODUCT**: oferece um sistema unificado para tratamento de dados de desempenho de produtividade e qualitativos dos alunos e respectivos grupos, nos módulos e entre os mesmo.
 
 <br>
 <p>O que este sistema é e o que este sistema não é:</p>
@@ -118,7 +117,7 @@ Abaixo é apresentada a visão geral do produto.
 
 **Objetivos do Produto**
 
-- Servir como apoio para o teste de execução dos módulos, me ajudando a entender como rodar módulos e os conhecimentos necessários.
+- Servir como apoio para o desenvolvimento em práticas de engenharia de software e de desenvolvimento de sistemas.
 
 - Ajudar no processo de coordenação da avaliação de desempenho dos alunos
 
@@ -128,10 +127,27 @@ As personas são Professores orientadores, Professores de Eixo (para acompanhame
 A jornada do usuário será feito posteriormente, porque eu mesma que estou construindo a solução.
 
 ## 2.4 Modelagem do Fluxo de Negócio
-_conteúdo_
+Nesta seção são listadas as atividades que a Professoa Vanessa realiza.
+
+- Coleta de índices de agilidade individuais e de grupo a cada Sprint
+- Cálculo de fator de produtividade
+- Coleta de pontos de avaliação de pares e feedbacks dos colegas de grupo para cada aluno
+- Registro de notas por atividades extras com feedbacks
+- Cálculo de nota do aluno na Sprint com feedbacks
+- Cálculo da nota dos artefatos com registro de feedback
+- Cálculo da média das notas dos artefatos
+- Acompanhamento de impressões do time docente sobre cada aluno ao longo do módulo.
 
 ## 2.5 Matriz de Risco do Projeto
-_conteúdo_
+Segue a lista de riscos possíveis para este projeto
+- Falta de tempo para dedicar ao projeto
+  - Ação: Definição de prazos reais e factíveis. 
+- Dificuldade de desenvolvimento de uma solução simples e eficiente.
+  - Ação: Solicitar consultoria do Prof. Afonso para direcionamento e aprovação das propostas
+
+Segue a lista de oportunidades
+- Participar ativamente de todas as etapas de construção de um sistema.
+- Experimentar os conhecimentos e práticas abordados nos módulos. 
 
 ## 2.6 Ideação - Brainstorming de features
 Vou construir a ideação na medida em que for precisando das coisas.
@@ -155,9 +171,9 @@ Vou construir a ideação na medida em que for precisando das coisas.
 ## 2.7 Métricas de Avaliação
 As métricas de avaliação são as seguintes:
 
-- Evolução no aprendizado da Vanessa
 - Corretude dos cálculos
 - Segurança na persistência dos dados
+- Usabilidade no dia a dia do módulo
 
 # 3. Requisitos do Projeto
 Os Requisitos funcionais e não funcionais são apresentados a seguir.
@@ -170,22 +186,33 @@ Os requisitos funcionais são apresentados abaixo.
 |RF001|Cadastro e alteração de alunos|O sistema deve permitir o cadastro e alteração de informações (nome, email, curso, turma, módulo) sobre alunos do Inteli|
 |RF002|Cadastro e alteração de Turma, Módulo e Grupo (número)|O sistema deve permitir o cadastro e alteração de Turmas, módulo e Grupo (número)|
 |RF003|Associação de aluno a módulo e Grupo|O sistema deve permitir que o orientador associe alunos a módulos e grupos (número)|
-|RF004|||
-|RF005|||
+|RF004|Cadastro de artefato de uma Sprint de um módulo|O sistema deve permitir o cadstro de artefatos de sprints de módulos|
+|RF005|Coleta de dados de gestão diária de tarefas|O sistema deve permitir a coleta de dados de produtividade das sprints de cada módulo no sistema Trello|
+|RF006|Cálculo do índice de produtividade|Ó sistema deve realizar o cálculo do índice de produtividade permitindo ajuste dinâmico dos pesos de cada fator e do fator de ajuste|
+|RF007|||
+|RF008|||
+|RF009|||
+
+Regras de Negócio
+
+|##|Regra de Negócio|
+|RN01|Índice de Produtividade na Sprint = Peso1 X FatorA + Peso2 X FatorB + Peso3 X FatorC, onde Peso1 + Peso2 + Peso3 = 1,0; FatorA = Índice de proximidade do tempo previsto de execução das tarefas a quantidade mínima de horas de desenvolvimento na Sprint; PesoB = Índice de Proximidade do Tempo total previsto de desenvolvimento para o tempo total de desenvolvimento do Projeto; PesoC = Índice de proximidade do Tempo total de desenvolvimento na Sprint em relação a quantidade mínima de horas de desenvolvimento na Sprint|
+|RN02|O sistema deve permitir a criação de mais fatores para o índice de produtividade|
+|RN03|O sistema deve permitir que a fórmula de cálculo da nota individual do aluno na sprint seja reformulada|
+|RN04||
 
 ## 3.2 Requisitos Não Funcionais (RNFs)
 Os requisitos funcionais são apresentados abaixo.
 
 ID|RF|Descrição|
 |---|---|---|
-|RNF001|Orientação a Serviços e microserviços|O sistema deve ser projetado em um arquitetua orientada a serviços|
-|RNF002||Persistência de dados| O sistema deve garanir persistência e redundância de dados para que não haja perda de dados.
+|RNF001|Orientação a Serviços e microserviços|O sistema deve ser projetado em um arquitetura orientada a serviços|
+|RNF002||Persistência de dados| O sistema deve garantir persistência e redundância de dados para que não haja perda de dados.
 |RNF003|||
 |RNF004|||
 
-
 ## 3.3 Correlação RFs e RNFs
-_conteúdo_
+Tudo para tudo
 
 # 4. Modelagem de Dados
 _conteúdo_
@@ -204,14 +231,120 @@ _conteúdo_
 # 5. Solução Técnica (Design)
 _conteúdo_
 
-## 5.1 Diagrama de Componentes da UML
+## 5.1 Diagrama de Classes da UML
+O diagrama de classes contempla estrutura de entidades reais identificadas no modelo de dados e comportamentos alinhados aos RFs.
+
+```mermaid
+classDiagram
+
+%% Classes com atributos e métodos (comportamentos)
+
+class Aluno {
+  +int id
+  +string nome
+  +string email
+  +string foto
+  +string observacoesAluno
+  +string observacoesGrupo
+  +cadastrar()
+  +atualizar()
+}
+
+class Modulo {
+  +int id
+  +int numero
+  +string curso
+  +string criterios
+  +string parceiro
+  +Date dataInicio
+  +Date dataFim
+  +string codigoExecucao
+  +cadastrar()
+  +atualizar()
+}
+
+class Grupo {
+  +int id
+  +int numeroGrupo
+  +string nomeGrupo
+  +string nomeProjeto
+  +cadastrar()
+  +atualizar()
+  +associarAluno(aluno: Aluno)
+}
+
+class Sprint {
+  +int id
+  +int numeroSprint
+  +int diasUteis
+}
+
+class Artefato {
+  +int id
+  +string nome
+  +string descricao
+  +float peso
+  +cadastrar()
+}
+
+class Atuacao {
+  +int id
+  +float notaIndividual
+  +string formatoAvaliacao
+  +float notaExtra
+  +float fatorModerador
+  +float IDS_FPa
+  +float IDS_FPb
+  +float IDS_FPc
+  +float IDS_FPa_ajustado
+  +float IDS_FPb_ajustado
+  +float IDS_FPc_ajustado
+  +float IDS_final
+  +float IDS_fator_ajuste
+  +float IDS_ajustado
+  +int AvaliacaoPares_eixo1
+  +int AvaliacaoPares_eixo2
+  +int AvaliacaoPares_eixo3
+  +float AvaliacaoPares_nota_final
+  +calcularIDS(pesos: object)
+}
+
+class GrupoArtefato {
+  +int id
+  +float notaArtefato
+  +string feedback
+}
+
+class GrupoSprint {
+  +int id
+  +float cycletimeDev
+  +float cycletimeRev
+  +float cycletimeDevRev
+  +float leadtime
+  +float produtividade
+  +coletarDadosDoTrello()
+}
+
+%% Relacionamentos
+
+Aluno "1" --> "0..*" Atuacao : participa
+Grupo "1" --> "0..*" Atuacao : inclui
+Modulo "1" --> "0..*" Grupo : possui
+Modulo "1" --> "0..*" Sprint : organiza
+Sprint "1" --> "0..*" Artefato : contém
+Grupo "1" --> "0..*" GrupoArtefato : desenvolve
+Grupo "1" --> "0..*" GrupoSprint : avalia
+Artefato "1" --> "0..*" GrupoArtefato : éAvaliado
+Sprint "1" --> "0..*" GrupoSprint : desempenho
+
+```
+
+## 5.2 Diagrama de Componentes da UML
 _conteúdo_
 
-## 5.2 Diagramas de Sequência da UML
+## 5.3 Diagramas de Sequência da UML
 _conteúdo_
 
-## 5.3 Descrição Textual dos Diagramas
-_conteúdo_
 
 # 6. Mapeamento Técnico de Infraestrutura e Implantação
 _conteúdo_
