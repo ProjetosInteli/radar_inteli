@@ -13,13 +13,10 @@
 
 ## Integrantes:
 
-- <a href="https://www.linkedin.com/in/username/">Nome</a>
-- <a href="https://www.linkedin.com/in/username/">Nome</a>
-- <a href="https://www.linkedin.com/in/username/">Nome</a>
-- <a href="https://www.linkedin.com/in/username/">Nome</a>
-- <a href="https://www.linkedin.com/in/username/">Nome</a>
-- <a href="https://www.linkedin.com/in/username/">Nome</a>
-- <a href="https://www.linkedin.com/in/username/">Nome</a>
+- <a href="https://www.linkedin.com/in/username/">Karine</a>
+- <a href="https://www.linkedin.com/in/username/">Vanessa</a>
+- <a href="https://www.linkedin.com/in/username/">Afonso</a>
+- <a href="https://www.linkedin.com/in/username/">Reginaldo</a>
 
 # Sumário
 
@@ -87,7 +84,7 @@ Este documento apresenta o projeto e desenvolvimento da Solução Radar Inteli.
 Esta seção apresenta o problema e a proposta de solução.
 
 ## 2.1 Problema
-A Professora Vanessa, atua como Professora Orientadora, registra e analisa informações quantitativas e qualitativas para acompanhamento dos alunos duarante o desenvolvimento dos módulos sob sua responsabilidade. Atualmente todas as informações são registradas manualmente em planilhas eletrônicas e as análises são criadas através de opções de geração de estatísticas oferecidas por essas ferramentas. A coleta de várias dessas informações advém de outros sistemas que demandam cópias manuais de uma grande quantidade de informações de forma manual, demandando alto esforço, risco de erros e diminuição do potencial de uso dessas informações para suporte ao desenvolvimentodos alunos dentro do módulo e no curso.  
+Um professor orientador, registra e analisa informações quantitativas e qualitativas para acompanhamento dos alunos duarante o desenvolvimento dos módulos sob sua responsabilidade. Atualmente todas as informações são registradas manualmente em planilhas eletrônicas e as análises são criadas através de opções de geração de estatísticas oferecidas por essas ferramentas. A coleta de várias dessas informações advém de outros sistemas que demandam cópias manuais de uma grande quantidade de informações,resultando em alto esforço, risco de erros e diminuição do potencial de uso dessas informações para suporte ao desenvolvimento dos alunos dentro do módulo e no curso.  
 
 ## 2.2 Visão do Projeto e do Produto
 Abaixo é apresentada a visão geral do produto.
@@ -124,18 +121,16 @@ Abaixo é apresentada a visão geral do produto.
 ## 2.3 Personas e Jornada do Usuário
 As personas são Professores orientadores, Professores de Eixo (para acompanhamento) e Coordenador.
 
-A jornada do usuário será feito posteriormente, porque eu mesma que estou construindo a solução.
-
 ## 2.4 Modelagem do Fluxo de Negócio
-Nesta seção são listadas as atividades que a Professoa Vanessa realiza.
+Nesta seção são listadas as atividades que a/o Professor(a) orientador(a) realiza.
 
-- Coleta de índices de agilidade individuais e de grupo a cada Sprint
-- Cálculo de fator de produtividade
-- Coleta de pontos de avaliação de pares e feedbacks dos colegas de grupo para cada aluno
-- Registro de notas por atividades extras com feedbacks
-- Cálculo de nota do aluno na Sprint com feedbacks
-- Cálculo da nota dos artefatos com registro de feedback
-- Cálculo da média das notas dos artefatos
+- Coleta de índices de agilidade individuais e de grupo a cada Sprint.
+- Cálculo de fator de produtividade individual e de grupo.
+- Coleta de dados de avaliação de pares e feedbacks dos colegas de grupo para cada aluno.
+- Registro de notas por atividades extras com feedbacks.
+- Cálculo de nota do aluno na Sprint com feedbacks.
+- Cálculo da nota dos artefatos com registro de feedback.
+- Cálculo da média das notas dos artefatos.
 - Acompanhamento de impressões do time docente sobre cada aluno ao longo do módulo.
 
 ## 2.5 Matriz de Risco do Projeto
@@ -150,7 +145,8 @@ Segue a lista de oportunidades
 - Experimentar os conhecimentos e práticas abordados nos módulos. 
 
 ## 2.6 Ideação - Brainstorming de features
-Vou construir a ideação na medida em que for precisando das coisas.
+Todas as ideias que forem aparecendo serão incluídas nesta seção sem compromisso com entrega.
+Esta seção serve como backlog do produto.
 
 - Listagem de alunos, com nome, e-mail e fotos.
 - CRUD de Turma, Módulo e Grupo (número)
@@ -193,9 +189,11 @@ Os requisitos funcionais são apresentados abaixo.
 |RF008|||
 |RF009|||
 
+<br>
 Regras de Negócio
 
-|##|Regra de Negócio|
+|ID|Regra de Negócio|
+|---|---|
 |RN01|Índice de Produtividade na Sprint = Peso1 X FatorA + Peso2 X FatorB + Peso3 X FatorC, onde Peso1 + Peso2 + Peso3 = 1,0; FatorA = Índice de proximidade do tempo previsto de execução das tarefas a quantidade mínima de horas de desenvolvimento na Sprint; PesoB = Índice de Proximidade do Tempo total previsto de desenvolvimento para o tempo total de desenvolvimento do Projeto; PesoC = Índice de proximidade do Tempo total de desenvolvimento na Sprint em relação a quantidade mínima de horas de desenvolvimento na Sprint|
 |RN02|O sistema deve permitir a criação de mais fatores para o índice de produtividade|
 |RN03|O sistema deve permitir que a fórmula de cálculo da nota individual do aluno na sprint seja reformulada|
@@ -237,15 +235,22 @@ O diagrama de classes contempla estrutura de entidades reais identificadas no mo
 ```mermaid
 classDiagram
 
-%% Classes com atributos e métodos (comportamentos)
+%% =========================
+%% Classes
+%% =========================
+
+class Turma {
+  +int id
+  +string nome
+  +cadastrar()
+  +atualizar()
+}
 
 class Aluno {
   +int id
   +string nome
   +string email
   +string foto
-  +string observacoesAluno
-  +string observacoesGrupo
   +cadastrar()
   +atualizar()
 }
@@ -277,6 +282,8 @@ class Sprint {
   +int id
   +int numeroSprint
   +int diasUteis
+  +cadastrar()
+  +atualizar()
 }
 
 class Artefato {
@@ -285,9 +292,12 @@ class Artefato {
   +string descricao
   +float peso
   +cadastrar()
+  +atualizar()
+  +excluir()
+  +moverParaSprint(sprint: Sprint)
 }
 
-class Atuacao {
+class AtuacaoAluno {
   +int id
   +float notaIndividual
   +string formatoAvaliacao
@@ -307,15 +317,19 @@ class Atuacao {
   +int AvaliacaoPares_eixo3
   +float AvaliacaoPares_nota_final
   +calcularIDS(pesos: object)
+  +calcularAvaliacaoPares(pesos: object)
+  +calcularNotaFinal(pesos: object)
 }
 
 class GrupoArtefato {
   +int id
   +float notaArtefato
   +string feedback
+  +atribuirNota(nota: float, feedback: string)
+  +alterarNota(nota: float, feedback: string)
 }
 
-class GrupoSprint {
+class AtuacaoGrupoSprint {
   +int id
   +float cycletimeDev
   +float cycletimeRev
@@ -323,19 +337,56 @@ class GrupoSprint {
   +float leadtime
   +float produtividade
   +coletarDadosDoTrello()
+  +calcularLeadTime()
+  +calcularCycleTimes()
+  +calcularProdutividade()
 }
 
-%% Relacionamentos
+class ObservacaoAluno {
+  +int id
+  +string texto
+  +Date data
+  +string autor
+  +inserir()
+  +alterar()
+}
 
-Aluno "1" --> "0..*" Atuacao : participa
-Grupo "1" --> "0..*" Atuacao : inclui
-Modulo "1" --> "0..*" Grupo : possui
-Modulo "1" --> "0..*" Sprint : organiza
-Sprint "1" --> "0..*" Artefato : contém
+class ObservacaoGrupo {
+  +int id
+  +string texto
+  +Date data
+  +string autor
+  +inserir()
+  +alterar()
+}
+
+%% =========================
+%% Relacionamentos (multiplicidades corrigidas)
+%% =========================
+
+%% Turma, Aluno, Grupo, Modulo
+Aluno "1" --> "0..*" Grupo : participa
+Modulo "1" --> "3..6" Grupo : possui
+Modulo "1" --> "5" Sprint : organiza
+Turma "1" --> "12" Modulo : cursa
+Aluno "1" --> "1" Turma : pertence
+
+%% Observações (separadas das entidades principais)
+Aluno "1" --> "0..*" ObservacaoAluno : registra
+Grupo "1" --> "0..*" ObservacaoGrupo : registra
+
+%% Sprints, Artefatos e desempenho do grupo
+Sprint "1" --> "0..*" Artefato : contem
 Grupo "1" --> "0..*" GrupoArtefato : desenvolve
-Grupo "1" --> "0..*" GrupoSprint : avalia
-Artefato "1" --> "0..*" GrupoArtefato : éAvaliado
-Sprint "1" --> "0..*" GrupoSprint : desempenho
+Artefato "1" --> "0..*" GrupoArtefato : avaliadoEm
+Sprint "1" --> "0..*" AtuacaoGrupoSprint : desempenho
+Grupo "1" --> "0..*" AtuacaoGrupoSprint : desempenhoDoGrupo
+
+%% Atuação do aluno é por sprint (um registro por aluno em cada sprint)
+Aluno "1" --> "0..*" AtuacaoAluno : atuacao
+Sprint "1" --> "0..*" AtuacaoAluno : referencias
+
+
 
 ```
 
