@@ -75,7 +75,7 @@
 
 
 # 1. Introdução
-Este documento apresenta o projeto e desenvolvimento da Solução Radar Inteli.
+O Radar Inteli é uma solução desenvolvida para facilitar o acompanhamento, análise e registro do desempenho dos alunos nos módulos do Inteli. O sistema busca integrar dados de diferentes fontes, automatizar cálculos de produtividade e notas, além de centralizar informações relevantes para professores orientadores e coordenadores. Dessa forma, o Radar Inteli contribui para uma gestão acadêmica mais eficiente, reduzindo erros e otimizando o processo de avaliação.
 
 ## 1.1 Termos e Abreviações
 - 
@@ -230,7 +230,7 @@ _conteúdo_
 _conteúdo_
 
 ## 5.1 Diagrama de Classes da UML
-O diagrama de classes contempla estrutura de entidades reais identificadas no modelo de dados e comportamentos alinhados aos RFs.
+O diagrama de classes abaixo detalha as principais entidades do Radar Inteli, como Turma, Aluno, Módulo, Grupo, Sprint, Artefato e suas relações. Cada classe representa um elemento fundamental do sistema, com atributos e métodos que refletem as operações necessárias para o gerenciamento acadêmico, avaliação de desempenho e registro de informações. Os relacionamentos entre as classes evidenciam como os dados fluem e se conectam, permitindo uma visão clara da estrutura lógica e dos processos envolvidos no acompanhamento dos alunos e grupos ao longo dos módulos.
 
 ```mermaid
 classDiagram
@@ -391,7 +391,36 @@ Sprint "1" --> "0..*" AtuacaoAluno : referencias
 ```
 
 ## 5.2 Diagrama de Componentes da UML
-_conteúdo_
+O diagrama de componentes apresenta a arquitetura técnica do Radar Inteli, destacando os principais módulos funcionais: configuração de turmas e módulos, gestão de projetos e parcerias, controle de artefatos e avaliações, métricas de grupo e atuação dos alunos. Cada componente é responsável por uma parte específica do sistema, e a comunicação entre eles ocorre por meio de eventos, garantindo integração e atualização dos dados. Essa abordagem facilita a escalabilidade, manutenção e compreensão dos fluxos de informação dentro da solução.
+
+```mermaid
+flowchart LR
+  subgraph SetupDoModulo
+    A[Turma/Modulo/Sprint/Grupos & Associação]
+  end
+  subgraph ParceriasEProjetos
+    P["Projeto (1:1 Módulo) + Parceira + TAPI + Anexos + Interlocutores"]
+  end
+  subgraph ArtefatosEAvaliacao
+    B["Artefatos & GrupoArtefato (AUDIT)"]
+  end
+  subgraph MetricasDoGrupo
+    D["Métricas do Grupo + ObservacaoGrupo (AUDIT reprocesso)"]
+  end
+  subgraph AtuacaoDoAluno
+    C["Peer Review + IDS + Nota Final + ObservacaoAluno"]
+  end
+  EV((Event Bus))
+  A -- ModuloCriado/SprintsGeradas/GrupoCriado/AlunoAssociadoAoGrupo --> EV
+  P -- ProjetoCriado/TAPIAnexada|Atualizada/AnexoAdicionado/InterlocutorCadastrado|Atualizado --> EV
+  B -- ArtefatoCriado/ArtefatoMovidoDeSprint/NotaDeArtefatoAtribuida|Alterada --> EV
+  D -- MetricasDeSprintConsolidadas/MetricasReprocessadas/ObservacaoGrupoRegistrada --> EV
+  C -- AvaliacaoParesCalculada/IDSCalculado/NotaFinalAlunoPublicada/ObservacaoAlunoRegistrada --> EV
+  EV --> B
+  EV --> C
+  EV --> D
+  EV --> P
+```
 
 ## 5.3 Diagramas de Sequência da UML
 _conteúdo_
