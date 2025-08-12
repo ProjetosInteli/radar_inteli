@@ -229,7 +229,115 @@ _conteúdo_
 # 5. Solução Técnica (Design)
 _conteúdo_
 
-## 5.1 Diagrama de Componentes da UML
+## 5.1 Diagrama de Classes da UML
+O diagrama de classes contempla estrutura de entidades reais identificadas no modelo de dados e comportamentos alinhados aos RFs.
+
+```mermaid
+classDiagram
+
+%% Classes com atributos e métodos (comportamentos)
+
+class Aluno {
+  +int id
+  +string nome
+  +string email
+  +string foto
+  +string observacoesAluno
+  +string observacoesGrupo
+  +cadastrar()
+  +atualizar()
+}
+
+class Modulo {
+  +int id
+  +int numero
+  +string curso
+  +string criterios
+  +string parceiro
+  +Date dataInicio
+  +Date dataFim
+  +string codigoExecucao
+  +cadastrar()
+  +atualizar()
+}
+
+class Grupo {
+  +int id
+  +int numeroGrupo
+  +string nomeGrupo
+  +string nomeProjeto
+  +cadastrar()
+  +atualizar()
+  +associarAluno(aluno: Aluno)
+}
+
+class Sprint {
+  +int id
+  +int numeroSprint
+  +int diasUteis
+}
+
+class Artefato {
+  +int id
+  +string nome
+  +string descricao
+  +float peso
+  +cadastrar()
+}
+
+class Atuacao {
+  +int id
+  +float notaIndividual
+  +string formatoAvaliacao
+  +float notaExtra
+  +float fatorModerador
+  +float IDS_FPa
+  +float IDS_FPb
+  +float IDS_FPc
+  +float IDS_FPa_ajustado
+  +float IDS_FPb_ajustado
+  +float IDS_FPc_ajustado
+  +float IDS_final
+  +float IDS_fator_ajuste
+  +float IDS_ajustado
+  +int AvaliacaoPares_eixo1
+  +int AvaliacaoPares_eixo2
+  +int AvaliacaoPares_eixo3
+  +float AvaliacaoPares_nota_final
+  +calcularIDS(pesos: object)
+}
+
+class GrupoArtefato {
+  +int id
+  +float notaArtefato
+  +string feedback
+}
+
+class GrupoSprint {
+  +int id
+  +float cycletimeDev
+  +float cycletimeRev
+  +float cycletimeDevRev
+  +float leadtime
+  +float produtividade
+  +coletarDadosDoTrello()
+}
+
+%% Relacionamentos
+
+Aluno "1" --> "0..*" Atuacao : participa
+Grupo "1" --> "0..*" Atuacao : inclui
+Modulo "1" --> "0..*" Grupo : possui
+Modulo "1" --> "0..*" Sprint : organiza
+Sprint "1" --> "0..*" Artefato : contém
+Grupo "1" --> "0..*" GrupoArtefato : desenvolve
+Grupo "1" --> "0..*" GrupoSprint : avalia
+Artefato "1" --> "0..*" GrupoArtefato : éAvaliado
+Sprint "1" --> "0..*" GrupoSprint : desempenho
+
+```
+
+## 5.2 Diagrama de Componentes da UML
 _conteúdo_
 
 ## 5.3 Diagramas de Sequência da UML
