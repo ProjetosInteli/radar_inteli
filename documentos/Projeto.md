@@ -205,7 +205,7 @@ Os requisitos funcionais são apresentados abaixo.
 ID|RF|Descrição|
 |---|---|---|
 |RNF001|Orientação a Serviços e microserviços|O sistema deve ser projetado em um arquitetua orientada a serviços|
-|RNF002||Persistência de dados| O sistema deve garanir persistência e redundância de dados para que não haja perda de dados.
+|RNF002|Persistência de dados| O sistema deve garanir persistência e redundância de dados para que não haja perda de dados.
 |RNF003|||
 |RNF004|||
 
@@ -235,15 +235,22 @@ O diagrama de classes contempla estrutura de entidades reais identificadas no mo
 ```mermaid
 classDiagram
 
-%% Classes com atributos e métodos (comportamentos)
+%% =========================
+%% Classes
+%% =========================
+
+class Turma {
+  +int id
+  +string nome
+  +cadastrar()
+  +atualizar()
+}
 
 class Aluno {
   +int id
   +string nome
   +string email
   +string foto
-  +string observacoesAluno
-  +string observacoesGrupo
   +cadastrar()
   +atualizar()
 }
@@ -275,6 +282,8 @@ class Sprint {
   +int id
   +int numeroSprint
   +int diasUteis
+  +cadastrar()
+  +atualizar()
 }
 
 class Artefato {
@@ -283,9 +292,12 @@ class Artefato {
   +string descricao
   +float peso
   +cadastrar()
+  +atualizar()
+  +excluir()
+  +moverParaSprint(sprint: Sprint)
 }
 
-class Atuacao {
+class AtuacaoAluno {
   +int id
   +float notaIndividual
   +string formatoAvaliacao
@@ -305,15 +317,19 @@ class Atuacao {
   +int AvaliacaoPares_eixo3
   +float AvaliacaoPares_nota_final
   +calcularIDS(pesos: object)
+  +calcularAvaliacaoPares(pesos: object)
+  +calcularNotaFinal(pesos: object)
 }
 
 class GrupoArtefato {
   +int id
   +float notaArtefato
   +string feedback
+  +atribuirNota(nota: float, feedback: string)
+  +alterarNota(nota: float, feedback: string)
 }
 
-class GrupoSprint {
+class AtuacaoGrupoSprint {
   +int id
   +float cycletimeDev
   +float cycletimeRev
@@ -321,19 +337,56 @@ class GrupoSprint {
   +float leadtime
   +float produtividade
   +coletarDadosDoTrello()
+  +calcularLeadTime()
+  +calcularCycleTimes()
+  +calcularProdutividade()
 }
 
-%% Relacionamentos
+class ObservacaoAluno {
+  +int id
+  +string texto
+  +Date data
+  +string autor
+  +inserir()
+  +alterar()
+}
 
-Aluno "1" --> "0..*" Atuacao : participa
-Grupo "1" --> "0..*" Atuacao : inclui
-Modulo "1" --> "0..*" Grupo : possui
-Modulo "1" --> "0..*" Sprint : organiza
-Sprint "1" --> "0..*" Artefato : contém
+class ObservacaoGrupo {
+  +int id
+  +string texto
+  +Date data
+  +string autor
+  +inserir()
+  +alterar()
+}
+
+%% =========================
+%% Relacionamentos (multiplicidades corrigidas)
+%% =========================
+
+%% Turma, Aluno, Grupo, Modulo
+Aluno "1" --> "0..*" Grupo : participa
+Modulo "1" --> "3..6" Grupo : possui
+Modulo "1" --> "5" Sprint : organiza
+Turma "1" --> "12" Modulo : cursa
+Aluno "1" --> "1" Turma : pertence
+
+%% Observações (separadas das entidades principais)
+Aluno "1" --> "0..*" ObservacaoAluno : registra
+Grupo "1" --> "0..*" ObservacaoGrupo : registra
+
+%% Sprints, Artefatos e desempenho do grupo
+Sprint "1" --> "0..*" Artefato : contem
 Grupo "1" --> "0..*" GrupoArtefato : desenvolve
-Grupo "1" --> "0..*" GrupoSprint : avalia
-Artefato "1" --> "0..*" GrupoArtefato : éAvaliado
-Sprint "1" --> "0..*" GrupoSprint : desempenho
+Artefato "1" --> "0..*" GrupoArtefato : avaliadoEm
+Sprint "1" --> "0..*" AtuacaoGrupoSprint : desempenho
+Grupo "1" --> "0..*" AtuacaoGrupoSprint : desempenhoDoGrupo
+
+%% Atuação do aluno é por sprint (um registro por aluno em cada sprint)
+Aluno "1" --> "0..*" AtuacaoAluno : atuacao
+Sprint "1" --> "0..*" AtuacaoAluno : referencias
+
+
 
 ```
 
